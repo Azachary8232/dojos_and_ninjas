@@ -7,7 +7,7 @@ def index():
     return render_template('dojo_info.html')
 
 @app.route('/dojos')
-def users():
+def dojos():
     return render_template('dojos.html', dojos = Dojo.get_all())
 
 @app.route('/dojo/<int:id>')
@@ -15,9 +15,10 @@ def dojo():
     return render_template('dojo_info.html')
 
 @app.route('/dojo/create', methods=['POST'])
-def create_ninja():
+def create_dojo():
     data = {
-        "(something/no())" : request.form['(somethong/no())']
+        "location" : request.form['location']
     }
-    Dojo.save(data)
-    return redirect('/ninja)')
+    print(data)
+    Dojo.create(data)
+    return redirect('/dojos')

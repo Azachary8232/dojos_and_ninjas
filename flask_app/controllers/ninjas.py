@@ -4,9 +4,6 @@ from flask import render_template, redirect, request, session, flash
 from flask_app import app
 from flask_app.models.model_ninja import Ninja
 
-@app.route('/')
-def index():
-    return render_template('dojo_info.html')
 
 @app.route('/ninjas')
 def ninjas():

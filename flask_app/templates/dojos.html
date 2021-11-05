@@ -13,9 +13,9 @@
 <div class="flex marginAuto" style="width: 75%; height: 1000px; margin-top: 100px;">
     <div class=" flex1">
         <h1 style="font-size: 36pt;" >New Dojo</h1>
-        <form style="margin-top: 50px;" action="">
+        <form style="margin-top: 50px;" action="/dojo/create" method="post">
             <label style="margin-right: 25px; display: inline-block;" for="dojo_name">Name</label>
-            <input style="display: inline-block;" type="text" name="dojo_name" id="dojo_name">
+            <input style="display: inline-block;" type="text" name="location" id="dojo_name">
             <button class="btn">Submit</button>
         </form>
     </div>
@@ -23,7 +23,7 @@
         <h1 style="font-size: 36pt;" >All Dojos</h1>
         <div style="border: 3px solid black; width: 75%; height: 300px; margin: 50px 0px;" >
             {% for dojo in dojos %}
-                <a href="/dojo/{{dojo.id}}">{{dojo.name}}</a>
+                <a style="display: block;" href="/dojo/{{dojo.id}}">{{dojo.location}}</a>
             {% endfor %}
         </div>
         <a href="">Add Ninja</a>
