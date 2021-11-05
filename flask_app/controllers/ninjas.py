@@ -6,11 +6,11 @@ from flask_app.models.model_ninja import Ninja
 
 @app.route('/')
 def index():
-    return render_template('dojos.html')
+    return render_template('dojo_info.html')
 
 @app.route('/ninja')
 def users():
-    return render_template('index.html')
+    return render_template('dojos.html')
 
 @app.route('/ninja/create', methods=['POST'])
 def create_ninja():
