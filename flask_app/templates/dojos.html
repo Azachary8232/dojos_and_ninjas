@@ -22,7 +22,9 @@
     <div class="flex2">
         <h1 style="font-size: 36pt;" >All Dojos</h1>
         <div style="border: 3px solid black; width: 75%; height: 300px; margin: 50px 0px;" >
-
+            {% for dojo in dojos %}
+                <a href="/dojo/{{dojo.id}}">{{dojo.name}}</a>
+            {% endfor %}
         </div>
         <a href="">Add Ninja</a>
     </div>
