@@ -10,7 +10,7 @@
 </head>
 <body>
 <div style="height: 800px;" class="container lego">
-    <h1 style="font-size: 36pt; margin-top: 75px;" >New Ninja</h1>
+    <h1 style="font-size: 36pt; margin-top: 75px;" >{{dojo.location}} Ninjas</h1>
     <table>
         <thead>
             <tr>
@@ -20,11 +20,13 @@
             </tr>
         </thead>
         <tbody>
+            {% for ninja in dojo.ninjas %}
             <tr>
-                <td>Sample</td>
-                <td>Sample</td>
-                <td>Sample</td>
+                <td>{{ninja.first_name}}</td>
+                <td>{{ninja.last_name}}</td>
+                <td>{{ninja.age}}</td>
             </tr>
+            {% endfor %}
         </tbody>
     </table>
     <a href="">Home</a>

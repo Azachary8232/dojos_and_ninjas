@@ -11,14 +11,16 @@ def dojos():
     return render_template('dojos.html', dojos = Dojo.get_all())
 
 @app.route('/dojo/<int:id>')
-def dojo():
-    return render_template('dojo_info.html')
+def dojo(id):
+    data = {
+        "id": id
+    }
+    return render_template('dojo_info.html', dojo=Dojo.get_one_with_ninjas(data))
 
 @app.route('/dojo/create', methods=['POST'])
 def create_dojo():
     data = {
         "location" : request.form['location']
     }
-    print(data)
     Dojo.create(data)
     return redirect('/dojos')
